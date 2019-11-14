@@ -18,26 +18,21 @@
                   </tr>
                 </thead>
 
-                @foreach($queues as $queue)
+                @foreach( $queues as $queue)
                 <tbody>
                     <tr>
                         <td class="centered hidden-phone">{{ $queue->queueId }}</td>
                         <td class="centered hidden-phone">{{ $queue->qType }}</td>
-                        <td><form method="post" action="{{ route('queue.store') }}">
-                            @csrf
-                            <select class="form-control" name="room">
-                                    <option></option>
-                                    <option>Room 1</option>
-                                    <option>Room 2</option>
-                                    <option>Room 3</option>
-                            </select>
-                            </form>
-                        </td>
+                        <td class="centered hidden-phone">{{ $queue->room }}</td>
                         <td class="centered hidden-phone">{{ $queue->qTime }}</td>
-                        <td class="centered hidden-phone">
-                            <button type="button" class="btn btn-theme02" href=""><i class="fa fa-check"></i>Call</button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                        <td class="centered hidden-phone"> <form method="POST" action="{{route('queue.delete',$queue->queueId)}}">
+                            <a class="btn btn-primary btn-xs" href="{{ route('queue.edit', $queue->queueId) }}"><i class="fa fa-pencil"></i></a>
+                            <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash-o "></i></button>
                         </td>
+                        
                     </tr>
                 </tbody>
                 @endforeach
@@ -52,18 +47,21 @@
   <script type="text/javascript" language="javascript" src="lib/advanced-datatable/js/jquery.js"></script>
   <script type="text/javascript" language="javascript" src="lib/advanced-datatable/js/jquery.dataTables.js"></script>
   <script type="text/javascript" src="lib/advanced-datatable/js/DT_bootstrap.js"></script>
-  <!-- <script type="text/javascript">
-      $(document).ready(function() {
-        var nCloneTh = document.createElement('th');
-        var nCloneTd = document.createElement('td');
+  <script type="text/javascript">
+  //     $(document).ready(function() {
+  //       var table = $('#datatable').DataTable();
+  //       table.on('click', '.edit', function(){
+  //         $tr = $(this).closest('tr');
+  //         if ($($tr).hasClass('child')){
+  //             $tr = $tr.prev('.parent');
+  //         }
 
-        // $('#hidden-table-info thead tr').each(function() {
-        // this.insertBefore(nCloneTh, this.childNodes[0]);
-        // });
+  //         var data = table.row($tr).data();
+  //         console.log(data);
+  //         $('#room').val(data[1]);
 
-        // $('#hidden-table-info tbody tr').each(function() {
-        // this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
-        // });
-      });
-  </script> -->
+  //         $('#editForm').attr('action', '/clinicstaff/queue/'+data[0]);
+  //         $('#editModal').modal('show');
+  //       });
+  // </script>
 @endsection

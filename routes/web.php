@@ -64,10 +64,14 @@ Route::post('/outpatient/createqueue', 'QueueController@store')->name('queue.sto
 // View queue
 Route::get('/clinicstaff/viewqueue', 'QueueController@show')->name('queue.show')->middleware('auth:clinicstaff');
 
-// Update queue
-Route::put('/clinicstaff/updatequeue', 'QueueController@update')->name('updateQueue');
+// Update and delete queue
+Route::put('/clinicstaff/updatequeue/{id}', 'QueueController@update')->name('queue.update');
+
+Route::get('/clinicstaff/editqueue/{id}', 'QueueController@edit')->name('queue.edit');
+
+Route::delete('/clinicstaff/deletequeue/{id}', 'QueueController@destroy')->name('queue.delete');
 
 // Display
 // Route::get('display', ['as' => 'display', 'uses' => 'DisplayController@index']);
-Route::get('/outpatient/display', 'DisplayController@index')->name('display');
+// Route::get('/outpatient/display', 'DisplayController@index')->name('display');
 

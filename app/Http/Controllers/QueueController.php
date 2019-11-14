@@ -42,6 +42,7 @@ class QueueController extends Controller
             'qTime' => $request->qTime,
             'room' => $request->room,
             'outpatientId' => Auth::guard('outpatient')->user()->outpatientId,
+            // 'staffId' => Auth::guard('staff')->user()->staffId,
         ]);
 
 
@@ -71,7 +72,9 @@ class QueueController extends Controller
      */
     public function edit($id)
     {
-        //
+        $queue = Queue::where('queueId', $id)->first();
+
+        return view('auth.clinicstaff.updatequeue', compact('queue'));
     }
 
     /**
@@ -83,15 +86,20 @@ class QueueController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $request = validate([
-            'room'       => 'required'
-        ]);
+        $queue = Queue::where('queueId', $id)->first();
+        
+        if ($queue){
+            
+            $input = $request->validate([
+                'room'=>'required'
+            ]);
 
-        $queue = Queue::find($id);
+            //return dd($input['room']);
 
-        $queue->room = $request->get('room');
-        $queue->save();
+            $queue->update([
+                'room'=>$input['room']
+            ]);
+        }
 
         return redirect('/clinicstaff/viewqueue')->with('success', 'queue details updated');
     }
@@ -104,6 +112,9 @@ class QueueController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $queue = Queue::find($id);
+        $queue->delete();
+
+        return redirect('/clinicstaff/viewqueue')->with('success', 'queue details deleted');
     }
 }

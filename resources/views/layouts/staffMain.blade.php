@@ -60,10 +60,10 @@
         <ul class="sidebar-menu" id="nav-accordion">
           <h5 class="centered">Welcome </h5> 
           <h5 class="centered">
-                {{ Auth::guard()->user()->staffName }}
+                {{ Auth::guard('clinicstaff')->user()->staffName }}
           </h5> 
           <li class="mt">
-            <a href="{{ route('viewClinicStaff', Auth::guard()->user()->staffId) }}">
+            <a href="{{ route('viewClinicStaff', Auth::guard('clinicstaff')->user()->staffId) }}">
               <i class="fa fa-file-text-o"></i>
               <span>View Account</span>
               </a>
@@ -117,6 +117,7 @@
   <script src="../../template/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="../../template/lib/common-scripts.js"></script>
+
   <!--script for this page-->
       @yield('script')
 </body>
