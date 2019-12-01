@@ -69,6 +69,12 @@
               </a>
           </li>
           <li class="sub-menu">
+            <a href="{{ route('outpatient.show') }}">
+              <i class="fa fa-file-text-o"></i>
+              <span>View Patients</span>
+              </a>
+          </li>
+          <li class="sub-menu">
             <a href="{{ route('queue.show') }}">
               <i class="fa fa-sort-numeric-asc"></i>
               <span>View Queue Number</span>

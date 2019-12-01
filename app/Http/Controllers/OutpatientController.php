@@ -132,6 +132,16 @@ class OutpatientController extends Controller
     */
    public function destroy($id)
    {
+        $outpatient = Outpatient::find($id);
+        $outpatient->delete();
+
+        return redirect('/clinicstaff/viewpatient')->with('success', 'outpatient details deleted');
+   }
+
+//utk viewpatient.blade.php
+   public function view()
+   {
        //
+       return view('auth.clinicstaff.viewpatient')->with('outpatients', Outpatient::all());
    }
 }

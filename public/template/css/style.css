@@ -3310,6 +3310,7 @@ ul.chat-available-user li a:hover {
     background: yellowgreen;
     color: #fff;
     padding: 15px 0;
+    min-height: 100%;
 }
 
 .site-footer p {

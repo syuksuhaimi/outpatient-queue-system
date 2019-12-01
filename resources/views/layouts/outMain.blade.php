@@ -68,12 +68,6 @@
               <span>View Account</span>
               </a>
           </li>
-          <!-- <li class="sub-menu">
-            <a href="{{ route('updateOutpatient', Auth::guard()->user()->outpatientId) }}">
-              <i class="fa fa-pencil"></i>
-              <span>Update Account</span>
-              </a>
-          </li> -->
           <li class="sub-menu">
             <a href="{{ route('createQueue') }}">
               <i class="fa fa-sort-numeric-asc"></i>
@@ -81,7 +75,7 @@
               </a>
           </li>
           <li class="sub-menu">
-            <a href="{{ route('display') }}">
+            <a href="">
               <i class="fa fa-bullseye"></i>
               <span>View Queue Number</span>
               </a>

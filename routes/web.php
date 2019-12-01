@@ -61,15 +61,19 @@ Route::get('/outpatient/createqueue', 'QueueController@index')->name('createQueu
 
 Route::post('/outpatient/createqueue', 'QueueController@store')->name('queue.store')->middleware('auth:outpatient');
 
-// View queue
+// View queue and view outpatient in table form
 Route::get('/clinicstaff/viewqueue', 'QueueController@show')->name('queue.show')->middleware('auth:clinicstaff');
 
-// Update and delete queue
+Route::get('/clinicstaff/viewpatient', 'OutpatientController@view')->name('outpatient.show')->middleware('auth:clinicstaff');
+
+// Update and (delete queue and outpatient)
 Route::put('/clinicstaff/updatequeue/{id}', 'QueueController@update')->name('queue.update');
 
 Route::get('/clinicstaff/editqueue/{id}', 'QueueController@edit')->name('queue.edit');
 
 Route::delete('/clinicstaff/deletequeue/{id}', 'QueueController@destroy')->name('queue.delete');
+
+Route::delete('/clinicstaff/deletepatient/{id}', 'OutpatientController@destroy')->name('outpatient.delete');
 
 // Display
 // Route::get('display', ['as' => 'display', 'uses' => 'DisplayController@index']);
