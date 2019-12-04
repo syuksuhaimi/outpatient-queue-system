@@ -16,7 +16,7 @@ class DisplayController extends Controller
 
     public function index()
     {
-        return view('auth.outpatient.displayqueue', [
+        return view('auth.clinicstaff.display', [
             'data' => $this->display->getDisplayData(),
         ]);
     }

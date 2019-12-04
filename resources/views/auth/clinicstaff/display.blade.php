@@ -1,4 +1,4 @@
-@extends('layouts.outMain')
+@extends('layouts.staffMain')
 
 @section('content')
 
@@ -65,7 +65,7 @@
                 cache: false,
                 success: function(response) {
                     s = JSON.parse(response);
-                    if (curr!=s[0].call_id) {
+                    if (curr!=s[0].queueId) {
                         $("#callarea").fadeOut(function(){
                             $('#num0').html(s[0].queueId);
                             $("#cou0").html(s[0].room);
@@ -77,14 +77,17 @@
                             $("#cou3").html(s[3].room);
                         });
                         $("#callarea").fadeIn();
-                        if (curr!=0) {
-                            var bleep = new Audio();
-                            bleep.src = '{{ url('assets/sound/sound1.mp3') }}';
-                            bleep.play();
+                        // if (curr!=0) {
+                        //     var bleep = new Audio();
+                        //     bleep.src = '{{ url('assets/sound/sound1.mp3') }}';
+                        //     bleep.play();
 
-
-                        }
-                        curr = s[0].call_id;
+                        //     window.setTimeout(function() {
+                        //         msg1 = '{!! trans('messages.display.token') !!} '+s[0].queueId+' {!! trans('messages.display.please') !!} {!! trans('messages.display.proceed_to') !!} '+s[0].room;
+                                
+                        //     }, 800);
+                        // }
+                        curr = s[0].queueId;
                     }
                 }
             });
@@ -101,7 +104,7 @@
                 cache: false,
                 success: function(response) {
                     s = JSON.parse(response);
-                    curr = s[0].call_id;
+                    curr = s[0].queueId;
                 }
             });
             checkcall();

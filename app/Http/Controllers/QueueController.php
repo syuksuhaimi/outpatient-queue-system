@@ -112,9 +112,18 @@ class QueueController extends Controller
      */
     public function destroy($id)
     {
-        $queue = Queue::find($id);
-        $queue->delete();
+        $queue = Queue::where('queueId',$id)->first();
 
-        return redirect('/clinicstaff/viewqueue')->with('success', 'queue details deleted');
+        if($queue){
+            $queue->delete();
+
+            return redirect('/clinicstaff/viewqueue')->with('success', 'queue details deleted');
+        }
+        else {
+
+            return redirect('/clinicstaff/viewqueue')->with('success','queue details deleted');
+
+        }
+
     }
 }

@@ -77,5 +77,5 @@ Route::delete('/clinicstaff/deletepatient/{id}', 'OutpatientController@destroy')
 
 // Display
 // Route::get('display', ['as' => 'display', 'uses' => 'DisplayController@index']);
-// Route::get('/outpatient/display', 'DisplayController@index')->name('display');
+Route::get('/clinicstaff/display', 'DisplayController@index')->name('display');
 

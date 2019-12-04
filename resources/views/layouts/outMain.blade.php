@@ -60,10 +60,10 @@
         <ul class="sidebar-menu" id="nav-accordion">
           <h5 class="centered">Welcome </h5> 
           <h5 class="centered">
-                {{ Auth::guard()->user()->name }}
+                {{ Auth::guard('outpatient')->user()->name }}
           </h5> 
           <li class="mt">
-            <a href="{{ route('viewOutpatient', Auth::guard()->user()->outpatientId) }}">
+            <a href="{{ route('viewOutpatient', Auth::guard('outpatient')->user()->outpatientId) }}">
               <i class="fa fa-file-text-o"></i>
               <span>View Account</span>
               </a>
@@ -75,7 +75,7 @@
               </a>
           </li>
           <li class="sub-menu">
-            <a href="">
+            <a href="{{ route('display') }}">
               <i class="fa fa-bullseye"></i>
               <span>View Queue Number</span>
               </a>

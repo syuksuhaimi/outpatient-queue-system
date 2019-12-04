@@ -62,7 +62,7 @@
           <h5 class="centered">
                 {{ Auth::guard('clinicstaff')->user()->staffName }}
           </h5> 
-          <li class="mt">
+          <li>
             <a href="{{ route('viewClinicStaff', Auth::guard('clinicstaff')->user()->staffId) }}">
               <i class="fa fa-file-text-o"></i>
               <span>View Account</span>
@@ -81,7 +81,7 @@
               </a>
           </li>
           <li class="sub-menu">
-            <a href="{{ route('queue.show') }}">
+            <a href="{{ route('display')}}">
               <i class="fa fa-sort-numeric-asc"></i>
               <span>Display Queue Number</span>
               </a>
