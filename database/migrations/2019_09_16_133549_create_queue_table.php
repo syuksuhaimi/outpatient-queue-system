@@ -17,12 +17,12 @@ class CreateQueueTable extends Migration
             $table->increments('queueId');
             $table->string('qType');
             $table->string('room')->nullable();
-            $table->string('qTime')->nullable();
+            $table->string('call')->nullable();
             $table->integer('outpatientId')->unsigned()->nullable();
             $table->integer('staffId')->unsigned()->nullable();
             $table->timestamps();
 
-            $table->foreign('outpatientId')->references('outpatientId')->on('outpatients');
+            $table->foreign('outpatientId')->references('outpatientId')->on('outpatients')->onDelete('cascade');
             $table->foreign('staffId')->references('staffId')->on('clinicStaffs');
         });
     }

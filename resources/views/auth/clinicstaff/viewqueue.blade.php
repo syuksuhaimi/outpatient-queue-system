@@ -13,18 +13,18 @@
                     <th class="centered hidden-phone">Queue Number</th>
                     <th class="centered hidden-phone">Queue Type</th>
                     <th class="centered hidden-phone">Room</th>
-                    <th class="centered hidden-phone">Time</th>
+                    <!-- <th class="centered hidden-phone">Time</th> -->
                     <th class="centered hidden-phone"></th>
                   </tr>
                 </thead>
 
-                @foreach( $queues ->reverse() as $queue)
+                @foreach( $queues as $queue)
                 <tbody>
                     <tr>
                         <td class="centered hidden-phone">{{ $queue->queueId }}</td>
                         <td class="centered hidden-phone">{{ $queue->qType }}</td>
                         <td class="centered hidden-phone">{{ $queue->room }}</td>
-                        <td class="centered hidden-phone">{{ $queue->qTime }}</td>
+                        <!-- <td class="centered hidden-phone">{{ $queue->qTime }}</td> -->
                         <td class="centered hidden-phone"> <form method="POST" action="{{ route('queue.delete', $queue->queueId) }}">
                             @csrf
                             @method('DELETE')
@@ -32,8 +32,9 @@
                             <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                             
                             <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash-o "></i></button>
+                            </form>
                         </td>
-                        </form>
+                        
                     </tr>
                 </tbody>
                 @endforeach

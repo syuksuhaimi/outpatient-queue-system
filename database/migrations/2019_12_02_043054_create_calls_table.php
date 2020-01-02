@@ -20,8 +20,8 @@ class CreateCallsTable extends Migration
             $table->integer('staffId')->unsigned()->nullable();            
             $table->timestamps();
 
-            $table->foreign('queueId')->references('queueId')->on('queue');
-            $table->foreign('outpatientId')->references('outpatientId')->on('outpatients');
+            $table->foreign('queueId')->references('queueId')->on('queue')->onDelete('cascade');
+            $table->foreign('outpatientId')->references('outpatientId')->on('outpatients')->onDelete('cascade');
             $table->foreign('staffId')->references('staffId')->on('clinicStaffs');
         });
 

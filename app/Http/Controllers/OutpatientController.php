@@ -48,7 +48,7 @@ class OutpatientController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-   public function show($id)
+   public function showOutpatient($id)
    {
        //return dd($outpatient= outpatients::where('outpatientId', $id)->first());
        $outpatient= Outpatient::where('outpatientId', $id)->first();
@@ -81,7 +81,7 @@ class OutpatientController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-   public function update(UpdateOutpatient $request, $id)
+   public function updateOutpatient(UpdateOutpatient $request, $id)
    {
         $outpatient = Outpatient::where('outpatientId', $id)->first();
 
@@ -130,12 +130,20 @@ class OutpatientController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-   public function destroy($id)
+   public function destroyOutpatient($id)
    {
-        $outpatient = Outpatient::find($id);
+        $outpatient = Outpatient::where('outpatientId',$id)->first();
+        
+        if($outpatient){
         $outpatient->delete();
 
-        return redirect('/clinicstaff/viewpatient')->with('success', 'outpatient details deleted');
+            return redirect('/clinicstaff/viewpatient')->with('success', 'outpatient details deleted');
+        }
+        else{
+
+            return redirect('/clinicstaff/viewqueue')->with('success','queue details deleted');
+            
+        }
    }
 
 //utk viewpatient.blade.php

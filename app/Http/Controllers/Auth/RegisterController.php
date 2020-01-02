@@ -82,7 +82,7 @@ class RegisterController extends Controller
     }
 
 
-    public function registerClinicStaff(Request $request)
+    public function createClinicStaff(Request $request)
     {
         //for validation
         $input = $request->validate([
@@ -108,7 +108,7 @@ class RegisterController extends Controller
         return redirect()->intended('clinicstaff/login');
     }
 
-    public function registerOutpatient(Request $request)
+    public function createOutpatient(Request $request)
     {
         $input = $request->validate([
             'name' => 'required',

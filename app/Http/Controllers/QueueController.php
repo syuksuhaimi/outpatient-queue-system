@@ -24,7 +24,7 @@ class QueueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createQueue()
+    public function create()
     {
         //
     }
@@ -35,11 +35,11 @@ class QueueController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function createQueue(Request $request)
     {
         $queue=Queue::create([
             'qType' => $request->qType,
-            'qTime' => $request->qTime,
+            // 'qTime' => $request->qTime,
             'room' => $request->room,
             'outpatientId' => Auth::guard('outpatient')->user()->outpatientId,
             // 'staffId' => Auth::guard('staff')->user()->staffId,
@@ -58,7 +58,7 @@ class QueueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function showQueue()
     {
         //
         return view('auth.clinicstaff.viewqueue')->with('queues', Queue::all());
@@ -84,7 +84,7 @@ class QueueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateQueue(Request $request, $id)
     {
         $queue = Queue::where('queueId', $id)->first();
         
@@ -110,7 +110,7 @@ class QueueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyQueue($id)
     {
         $queue = Queue::where('queueId',$id)->first();
 

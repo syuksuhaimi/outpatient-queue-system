@@ -77,13 +77,13 @@
           <li class="sub-menu">
             <a href="{{ route('queue.show') }}">
               <i class="fa fa-sort-numeric-asc"></i>
-              <span>View Queue Number</span>
+              <span>View Queue List</span>
               </a>
           </li>
           <li class="sub-menu">
             <a href="{{ route('display')}}">
-              <i class="fa fa-sort-numeric-asc"></i>
-              <span>Display Queue Number</span>
+              <i class="fa fa-table"></i>
+              <span>Display Queue No</span>
               </a>
           </li>
         </ul>

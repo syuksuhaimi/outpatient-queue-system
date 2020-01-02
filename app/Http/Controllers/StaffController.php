@@ -48,7 +48,7 @@ class StaffController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-   public function show($id)
+   public function showClinicStaff($id)
    {
         //return dd($outpatient= outpatients::where('outpatientId', $id)->first());
         $clinicstaff= ClinicStaff::where('staffId', $id)->first();
@@ -80,7 +80,7 @@ class StaffController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-   public function update(UpdateStaff $request, $id)
+   public function updateClinicStaff(UpdateStaff $request, $id)
    {
     $clinicstaff = ClinicStaff::where('staffId', $id)->first();
 

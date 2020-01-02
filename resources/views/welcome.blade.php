@@ -6,7 +6,7 @@
  <!-- CSRF Token -->
  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ config('app.name', 'Outpatient Management System') }}</title>
+<title>{{ config('app.name', 'Outpatient Queuing System') }}</title>
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,7 +18,7 @@
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        <title>Outpatient Management System</title>
+        <title>Outpatient Queuing System</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -82,7 +82,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Outpatient Queuing System
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -156,7 +156,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Outpatient Management System
+                    Outpatient Queuing System
                 </div>
 
                 <div class="links">
