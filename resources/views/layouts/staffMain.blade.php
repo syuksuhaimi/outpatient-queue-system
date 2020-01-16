@@ -35,7 +35,7 @@
       </div>
 
       <!--logo start-->
-      <a class="logo"><b>Klinik Kesihatan Kamunting</b></a>
+      <a class="logo"><b>Outpatient Queuing System</b></a>
       <!--logo end-->
 
       <div class="top-menu">

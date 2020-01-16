@@ -85,5 +85,18 @@
             @yield('content')
         </main>
     </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+    <script type="text/javascript" src="/jquery.backstretch.min.js"></script>;
+    <script type="text/javascript">
+        $.backstretch("../../template/kkk.png", {speed: 150});
+    </script>
+
+    <!-- <script type="text/javascript" src="../../template/lib/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("../../template/img/kkk.png", {
+        speed: 500
+        });
+    </script> -->
 </body>
+
 </html>

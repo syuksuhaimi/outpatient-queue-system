@@ -16,6 +16,8 @@ class DisplayController extends Controller
 
     public function index()
     {
+        event(new \App\Events\TokenCalled());
+        
         return view('auth.clinicstaff.display', [
             'data' => $this->display->getDisplayData(),
         ]);
