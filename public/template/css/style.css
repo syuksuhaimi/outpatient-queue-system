@@ -2201,7 +2201,7 @@ ul.my-friends li .friends-pic {
 	line-height: 34px;
 	margin: 0 auto;
 	padding: 0;
-	text-align: center;
+	text-align: left;
 	width: 70%;
 	-webkit-transition: background-color .4s linear, color .4s linear;
 	-moz-transition: background-color .4s linear, color .4s linear;

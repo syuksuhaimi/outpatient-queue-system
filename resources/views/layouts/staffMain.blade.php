@@ -62,7 +62,13 @@
           <h5 class="centered">
                 {{ Auth::guard('clinicstaff')->user()->staffName }}
           </h5> 
-          <li>
+          <li class="mt">
+            <a href="{{ route('homeClinicStaff') }}">
+              <i class="fa fa-home"></i>
+              <span>Home</span>
+              </a>
+          </li>
+          <li class="sub-menu">
             <a href="{{ route('viewClinicStaff', Auth::guard('clinicstaff')->user()->staffId) }}">
               <i class="fa fa-file-text-o"></i>
               <span>View Account</span>

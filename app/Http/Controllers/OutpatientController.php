@@ -152,4 +152,5 @@ class OutpatientController extends Controller
        //
        return view('auth.clinicstaff.viewpatient')->with('outpatients', Outpatient::all());
    }
+
 }

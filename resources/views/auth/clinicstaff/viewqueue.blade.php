@@ -3,7 +3,8 @@
 @section('content')
 
   <section class="wrapper">
-        <h3>List of Queues</h3>
+        <h3><b>List of Queues</b></h3>
+        <hr>
           <div class="row mb">
           <div class="content-panel">
             <div class="adv-table">

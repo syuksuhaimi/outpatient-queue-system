@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="wrapper">
-        <h3>Outpatient Form</h3>
+        <h3><b>Outpatient Form</b></h3>
         <hr>
 
         <div class="row mt">

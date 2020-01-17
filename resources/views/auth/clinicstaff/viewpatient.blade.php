@@ -3,7 +3,8 @@
 @section('content')
 
   <section class="wrapper">
-        <h3>List of Outpatients</h3>
+        <h3><b>List of Outpatients</b></h3>
+        <hr>
           <div class="row mb">
           <div class="content-panel">
             <div class="adv-table">
@@ -22,21 +23,20 @@
 <!-- utk data muncul mcm kat database -->
                 @foreach( $outpatients as $outpatient)
                 <tbody>
-                    <tr>
-                        <td class="centered hidden-phone">{{ $outpatient->name }}</td>
-                        <td class="centered hidden-phone">{{ $outpatient->icNumber }}</td>
-                        <td class="centered hidden-phone">{{ $outpatient->age }}</td>
-                        <td class="centered hidden-phone">{{ $outpatient->address }}</td>
-                        <td class="centered hidden-phone">{{ $outpatient->gender }}</td>
-                        <td class="centered hidden-phone">{{ $outpatient->email }}</td>
-                        <td class="centered hidden-phone"> <form method="POST" action="{{route('outpatient.delete',$outpatient->outpatientId)}}">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash-o "></i></button>
-                            </form>
-                        </td>
-                        
-                    </tr>
+                  <tr>
+                    <td class="centered hidden-phone">{{ $outpatient->name }}</td>
+                    <td class="centered hidden-phone">{{ $outpatient->icNumber }}</td>
+                    <td class="centered hidden-phone">{{ $outpatient->age }}</td>
+                    <td class="centered hidden-phone">{{ $outpatient->address }}</td>
+                    <td class="centered hidden-phone">{{ $outpatient->gender }}</td>
+                    <td class="centered hidden-phone">{{ $outpatient->email }}</td>
+                    <td class="centered hidden-phone"> <form method="POST" action="{{route('outpatient.delete',$outpatient->outpatientId)}}">
+                      @csrf
+                      @method('DELETE')
+                        <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash-o "></i></button>
+                        </form>
+                    </td>   
+                  </tr>
                 </tbody>
                 @endforeach
               </table>

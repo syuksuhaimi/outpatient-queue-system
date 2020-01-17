@@ -63,6 +63,12 @@
                 {{ Auth::guard('outpatient')->user()->name }}
           </h5> 
           <li class="mt">
+            <a href="{{ route('outpatientAgent') }}">
+              <i class="fa fa-home"></i>
+              <span>Home</span>
+              </a>
+          </li>
+          <li class="sub-menu">
             <a href="{{ route('viewOutpatient', Auth::guard('outpatient')->user()->outpatientId) }}">
               <i class="fa fa-file-text-o"></i>
               <span>View Account</span>

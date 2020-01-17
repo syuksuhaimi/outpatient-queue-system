@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Outpatient;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,8 @@ class HomeController extends Controller
     }
 
     public function homeClinicStaff() {
-        return view('auth.clinicstaff.home');
+        //return view('auth.clinicstaff.home');
+        return view('auth.clinicstaff.home')->with('outpatients', Outpatient::all());
     }
 
     public function homeOutpatient() {
