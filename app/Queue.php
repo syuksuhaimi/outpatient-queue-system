@@ -15,7 +15,7 @@ class Queue extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'queueId', 'qType', 'room', 'qTime', 'outpatientId', 'staffId'
+        'queueId', 'qType', 'room', 'outpatientId', 'staffId'
     ];
 
     public function outpatient()

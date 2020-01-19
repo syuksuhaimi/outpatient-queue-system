@@ -87,7 +87,7 @@
               </a>
           </li>
           <li class="sub-menu">
-            <a href="{{ route('display')}}">
+            <a href="{{ route('call.display')}}">
               <i class="fa fa-table"></i>
               <span>Display Queue No</span>
               </a>

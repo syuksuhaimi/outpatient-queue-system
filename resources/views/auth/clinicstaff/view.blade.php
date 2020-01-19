@@ -18,6 +18,7 @@
             <li>Staff Name: {{ $clinicstaff->staffName }}</li>
             <li>Phone Number: {{ $clinicstaff->phone }}</li>
             <li>Gender: {{ $clinicstaff->gender }}</li>
+            <li>Position: {{ $clinicstaff->position }}</li>
             <li>E-mail Address: {{ $clinicstaff->email }}</li>
           </ul>
           <a class= "btn btn-theme" href="{{ route('editClinicStaff', Auth::guard('clinicstaff')->user()->staffId)}}"> 

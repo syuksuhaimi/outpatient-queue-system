@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Call;
+use App\Outpatient;
+use App\Queue;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use DB;
 
 class CallController extends Controller
 {
@@ -14,7 +18,16 @@ class CallController extends Controller
      */
     public function index()
     {
-        //
+            // $queueId = DB::table('calls')
+            //     ->insertGetId(['qType'=>$request->qType])
+        $calls = DB::table('call')
+            ->join('queue','queue.queueId','=','call.queueId')
+            ->select('call.id','call.queueId','call.room','queue.qType','queue.outpatientId')
+            ->where('call.id','=',$id)
+            ->orderBy('call.id','desc')
+            ->get();
+
+            return view('auth.call.view', compact('data'));
     }
 
     /**
@@ -22,9 +35,21 @@ class CallController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $id)
     {
-        //
+        $queue = Queue::where('queueId',$id)->first();
+        return view('auth.call.create',compact('queue'));
+        // $queue = Queue::select('queueId', 'outpatientId', 'staffId')->where('queueId', $id)->first()->get();
+        
+        // $call = Call::create([
+
+        //     'queueId' => $queue->queueId,
+        //     'outpatientId' => $queue->outpatientId,
+        //     'staffId' => $queue->staffId,
+        // ]); 
+        
+
+        // return redirect('/clinicstaff/viewqueue');
     }
 
     /**
@@ -33,9 +58,20 @@ class CallController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $input = $request->validate([
+            'room'=>'required|string',
+        ]);
+
+        $call = Call::create([
+            'room'=> $input['room'],
+            'queueId'=> $id,
+            'staffId' => Auth::guard('clinicstaff')->user()->staffId,
+
+        ]);
+
+        return redirect('/clinicstaff/display');
     }
 
     /**
@@ -44,9 +80,9 @@ class CallController extends Controller
      * @param  \App\Call  $call
      * @return \Illuminate\Http\Response
      */
-    public function show(Call $call)
+    public function show()
     {
-        //
+        return view('auth.call.view')->with('calls', Call::latest()->get());
     }
 
     /**

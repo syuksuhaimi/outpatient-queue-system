@@ -39,8 +39,7 @@ class QueueController extends Controller
     {
         $queue=Queue::create([
             'qType' => $request->qType,
-            // 'qTime' => $request->qTime,
-            'room' => $request->room,
+            // 'room' => $request->room,
             'outpatientId' => Auth::guard('outpatient')->user()->outpatientId,
             // 'staffId' => Auth::guard('staff')->user()->staffId,
         ]);
@@ -86,22 +85,22 @@ class QueueController extends Controller
      */
     public function updateQueue(Request $request, $id)
     {
-        $queue = Queue::where('queueId', $id)->first();
+        // $queue = Queue::where('queueId', $id)->first();
         
-        if ($queue){
+        // if ($queue){
             
-            $input = $request->validate([
-                'room'=>'required'
-            ]);
+        //     $input = $request->validate([
+        //         'room'=>'required'
+        //     ]);
 
-            //return dd($input['room']);
+        //     //return dd($input['room']);
 
-            $queue->update([
-                'room'=>$input['room']
-            ]);
-        }
+        //     $queue->update([
+        //         'room'=>$input['room']
+        //     ]);
+        // }
 
-        return redirect('/clinicstaff/viewqueue')->with('success', 'queue details updated');
+        // return redirect('/clinicstaff/viewqueue')->with('success', 'queue details updated');
     }
 
     /**

@@ -15,7 +15,7 @@ class Call extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'id', 'queueId', 'outpatientId', 'staffId'
+        'id', 'queueId', 'room', 'outpatientId', 'staffId'
     ];
 
     public function queue()

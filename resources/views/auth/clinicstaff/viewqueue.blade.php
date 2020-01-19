@@ -13,8 +13,6 @@
                   <tr>
                     <th class="centered hidden-phone">Queue Number</th>
                     <th class="centered hidden-phone">Queue Type</th>
-                    <th class="centered hidden-phone">Room</th>
-                    <!-- <th class="centered hidden-phone">Time</th> -->
                     <th class="centered hidden-phone"></th>
                   </tr>
                 </thead>
@@ -24,13 +22,12 @@
                     <tr>
                         <td class="centered hidden-phone">{{ $queue->queueId }}</td>
                         <td class="centered hidden-phone">{{ $queue->qType }}</td>
-                        <td class="centered hidden-phone">{{ $queue->room }}</td>
-                        <!-- <td class="centered hidden-phone">{{ $queue->qTime }}</td> -->
                         <td class="centered hidden-phone"> <form method="POST" action="{{ route('queue.delete', $queue->queueId) }}">
                             @csrf
                             @method('DELETE')
-                            <a class="btn btn-primary btn-xs" href="{{ route('queue.edit', $queue->queueId) }}"><i class="fa fa-pencil"></i></a>
-                            <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                            <!-- <a class="btn btn-primary btn-xs" href="{{ route('queue.edit', $queue->queueId) }}"><i class="fa fa-pencil"></i></a> -->
+                            
+                            <a class="btn btn-success btn-xs" href="{{ route('call.create', $queue->queueId) }}"><i class="fa fa-check"></i></a>
                             
                             <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash-o "></i></button>
                             </form>
