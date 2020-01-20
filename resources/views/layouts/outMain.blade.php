@@ -83,7 +83,7 @@
           <li class="sub-menu">
             <a href="{{ route('outpatient.call')}}">
               <i class="fa fa-bullseye"></i>
-              <span>View Queue Number</span>
+              <span>Display Turn</span>
               </a>
           </li>
         </ul>
