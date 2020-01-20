@@ -16,14 +16,12 @@ class CreateQueueTable extends Migration
         Schema::create('queue', function (Blueprint $table) {
             $table->increments('queueId');
             $table->string('qType');
-            $table->string('room')->nullable();
-            // $table->string('call')->nullable();
             $table->integer('outpatientId')->unsigned()->nullable();
-            $table->integer('staffId')->unsigned()->nullable();
+            // $table->integer('staffId')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('outpatientId')->references('outpatientId')->on('outpatients')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('staffId')->references('staffId')->on('clinicStaffs')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('staffId')->references('staffId')->on('clinicStaffs')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -17,12 +17,12 @@ class CreateCallsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('queueId')->unsigned()->nullable();
             $table->string('room')->nullable();
-            $table->integer('outpatientId')->unsigned()->nullable();
+            // $table->integer('outpatientId')->unsigned()->nullable();
             $table->integer('staffId')->unsigned()->nullable();            
             $table->timestamps();
 
             $table->foreign('queueId')->references('queueId')->on('queue')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('outpatientId')->references('outpatientId')->on('outpatients')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('outpatientId')->references('outpatientId')->on('outpatients')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('staffId')->references('staffId')->on('clinicStaffs')->onUpdate('cascade')->onDelete('cascade');
         });
 
