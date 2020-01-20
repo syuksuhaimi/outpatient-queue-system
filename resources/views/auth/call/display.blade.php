@@ -1,4 +1,4 @@
-@extends('layouts.staffMain')
+@extends('layouts.outMain')
 
 @section('style')
 <style>

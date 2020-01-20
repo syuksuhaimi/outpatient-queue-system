@@ -85,3 +85,5 @@ Route::get('/clinicstaff/call/{id}','CallController@create')->name('call.create'
 Route::post('/clinicstaff/call/create{id}', 'CallController@store')->name('add.call');
 
 Route::get('/clinicstaff/display', 'CallController@show')->name('call.display');
+
+Route::get('/outpatient/display', 'CallController@display')->name('outpatient.call');

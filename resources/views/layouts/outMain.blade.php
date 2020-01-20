@@ -81,7 +81,7 @@
               </a>
           </li>
           <li class="sub-menu">
-            <a href="{{ route('call.display')}}">
+            <a href="{{ route('outpatient.call')}}">
               <i class="fa fa-bullseye"></i>
               <span>View Queue Number</span>
               </a>

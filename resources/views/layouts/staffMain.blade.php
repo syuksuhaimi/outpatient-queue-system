@@ -22,7 +22,7 @@
   <!-- Custom styles for this template -->
   <link href="../../template/css/style.css" rel="stylesheet">
   <link href="../../template/css/style-responsive.css" rel="stylesheet">
-
+  @yield('style')
 </head>
 
 <body>

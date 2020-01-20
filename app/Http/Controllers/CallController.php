@@ -82,7 +82,14 @@ class CallController extends Controller
      */
     public function show()
     {
-        return view('auth.call.view')->with('calls', Call::latest()->get());
+        // $call = Call::paginate(4);
+        return view('auth.call.view')->with('calls', Call::latest()->paginate(4));
+        
+    }
+
+    public function display()
+    {
+        return view('auth.call.display')->with('calls', Call::latest()->paginate(4));
     }
 
     /**
