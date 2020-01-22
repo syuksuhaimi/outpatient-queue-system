@@ -13,6 +13,8 @@
                   <tr>
                     <th class="centered hidden-phone">Queue Number</th>
                     <th class="centered hidden-phone">Queue Type</th>
+                    <th class="centered hidden-phone">Outpatient Name</th>
+                    <th class="centered hidden-phone">Room</th>
                     <th class="centered hidden-phone"></th>
                   </tr>
                 </thead>
@@ -22,6 +24,8 @@
                     <tr>
                         <td class="centered hidden-phone">{{ $queue->queueId }}</td>
                         <td class="centered hidden-phone">{{ $queue->qType }}</td>
+                        <td class="centered hidden-phone">{{ $queue->outpatient->name }}</td>
+                        <td class="centered hidden-phone">{{ $queue->call ? $queue->call->room : 'No room yet' }}</td>
                         <td class="centered hidden-phone"> <form method="POST" action="{{ route('queue.delete', $queue->queueId) }}">
                             @csrf
                             @method('DELETE')

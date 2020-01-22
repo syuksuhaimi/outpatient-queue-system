@@ -20,12 +20,17 @@ class Queue extends Model
 
     public function outpatient()
 	{
-		return $this->belongsTo('app\Outpatient');
+		return $this->belongsTo('App\Outpatient', 'outpatientId', 'outpatientId');
     }
     
     public function clinicstaff()
 	{
-		return $this->belongsTo('app\ClinicStaff');
+		return $this->belongsTo('App\ClinicStaff');
+    }
+
+    public function call()
+    {
+        return $this->hasOne('App\Call', 'queueId', 'queueId');
     }
     
 }

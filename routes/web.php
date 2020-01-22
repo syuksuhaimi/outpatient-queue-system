@@ -82,7 +82,7 @@ Route::delete('/clinicstaff/deletepatient/{id}', 'OutpatientController@destroyOu
 //Call
 Route::get('/clinicstaff/call/{id}','CallController@create')->name('call.create')->middleware('auth:clinicstaff');
 
-Route::post('/clinicstaff/call/create{id}', 'CallController@store')->name('add.call');
+Route::post('/clinicstaff/call/create/{id}', 'CallController@store')->name('add.call');
 
 Route::get('/clinicstaff/display', 'CallController@show')->name('call.display');
 
