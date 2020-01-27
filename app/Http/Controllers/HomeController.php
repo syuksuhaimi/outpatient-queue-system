@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        
     }
 
     /**
@@ -28,7 +28,6 @@ class HomeController extends Controller
     }
 
     public function homeClinicStaff() {
-        //return view('auth.clinicstaff.home');
         return view('auth.clinicstaff.home')->with('outpatients', Outpatient::all());
     }
 

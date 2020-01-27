@@ -17,11 +17,9 @@ class CreateQueueTable extends Migration
             $table->increments('queueId');
             $table->string('qType');
             $table->integer('outpatientId')->unsigned()->nullable();
-            // $table->integer('staffId')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('outpatientId')->references('outpatientId')->on('outpatients')->onUpdate('cascade')->onDelete('cascade');
-            // $table->foreign('staffId')->references('staffId')->on('clinicStaffs')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

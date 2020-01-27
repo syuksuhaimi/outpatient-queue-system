@@ -18,8 +18,6 @@ class CallController extends Controller
      */
     public function index()
     {
-            // $queueId = DB::table('calls')
-            //     ->insertGetId(['qType'=>$request->qType])
         $calls = DB::table('call')
             ->join('queue','queue.queueId','=','call.queueId')
             ->select('call.id','call.queueId','call.room','queue.qType','queue.outpatientId')
@@ -35,21 +33,10 @@ class CallController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, $id)
+    public function createCall(Request $request, $id)
     {
         $queue = Queue::where('queueId',$id)->first();
         return view('auth.call.create',compact('queue'));
-        // $queue = Queue::select('queueId', 'outpatientId', 'staffId')->where('queueId', $id)->first()->get();
-        
-        // $call = Call::create([
-
-        //     'queueId' => $queue->queueId,
-        //     'outpatientId' => $queue->outpatientId,
-        //     'staffId' => $queue->staffId,
-        // ]); 
-        
-
-        // return redirect('/clinicstaff/viewqueue');
     }
 
     /**
@@ -58,8 +45,9 @@ class CallController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function storeCall(Request $request, $id)
     {
+        //assign room and store kat database
         $input = $request->validate([
             'room'=>'required|string',
         ]);
@@ -80,14 +68,13 @@ class CallController extends Controller
      * @param  \App\Call  $call
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function showCall()
     {
-        // $call = Call::paginate(4);
         return view('auth.call.view')->with('calls', Call::latest()->paginate(4));
         
     }
 
-    public function display()
+    public function displayCall()
     {
         return view('auth.call.display')->with('calls', Call::latest()->paginate(4));
     }

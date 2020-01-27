@@ -38,16 +38,7 @@
 				  			<div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
 				        		<a><img src="../../homepage/img/oqs.png" style="width:350px; height:50px;" alt="" title="" /></a>			
 				  			</div>
-				  			<!-- <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
-                              <a class="btns" href="{{ route('clinicstaffLogin') }}">{{__('Clinic Staff')}}</i></a>
-				  				<a class="btns" href="{{ route('outpatientLogin') }}">{{__('Outpatient')}}</i></a>		
-				  				<a class="icons" href="tel:+953 012 3654 896">
-				  					<span class="lnr lnr-phone-handset"></span>
-				  				</a>
-				  				<a class="icons" href="mailto:support@colorlib.com">
-				  					<span class="lnr lnr-envelope"></span>
-				  				</a>		
-				  			</div> -->
+
 				  		</div>			  					
 		  			</div>
 				</div>
@@ -59,20 +50,6 @@
 				          <li><a href="about.html">About</a></li>
 				          <li><a href="services.html">Services</a></li>
 				          <li><a href="opening-hour.html">Opening Hour </a></li>
-				          <!-- <li class="menu-has-children"><a href="">Blog</a>
-				            <ul>
-				              <li><a href="blog-home.html">Blog Home</a></li>
-				              <li><a href="blog-single.html">Blog Single</a></li>
-					          <li class="menu-has-children"><a href="">Level 2</a>
-					            <ul>
-					              <li><a href="#">Item One</a></li>
-					              <li><a href="#">Item Two</a></li>
-					            </ul>
-					          </li>					              
-				            </ul>
-				          </li>	 -->
-				          <!-- <li><a href="pricing.html">Pricing</a></li>				          	          
-				          <li><a href="elements.html">Elements</a></li>				          	           -->
 				          <li><a href="contact.html">Contact</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->
@@ -92,7 +69,6 @@
 				<div class="container">
 					<div class="row fullscreen d-flex justify-content-center align-items-center">
 						<div class="banner-content col-lg-9 col-md-12 justify-content-center">
-							<!-- <h6 class="text-uppercase">Don’t look further, This is your Dentist</h6> -->
 							<h1>
 								Outpatient Queuing System		
 							</h1>
@@ -113,9 +89,6 @@
 					<div class="row justify-content-center">
 						<div class="col-lg-12 open-hour-wrap">
 							<h1>Opening Hours</h1>
-							<p>
-								<!-- Get ready to cast your vote and select the right one -->
-							</p>
 							<a class="open-btn" href="#"> <span class="circle"></span>We are open Now</a>
 							<div class="date-list d-flex flex-row justify-content-center">
 								<ul class="colm-1">
@@ -148,7 +121,6 @@
 									<li><a href="#">About</a></li>
 									<li><a href="#">Services</a></li>
 									<li><a href="#">Opening Hours</a></li>
-									<!-- <li><a href="#">Marketing Service</a></li> -->
 								</ul>
 							</div>
 						</div>
@@ -163,7 +135,6 @@
                                 Perak
 								</p>
 								<h3>05-8913 751</h3>
-								<!-- <h3>012-6532-568-97468</h3> -->
 							</div>
 						</div>							
 						<div class="col-lg-6  col-md-12">
@@ -193,9 +164,9 @@
 					</div>
 
 					<div class="row footer-bottom d-flex justify-content-between">
-						<p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						<p class="col-lg-8 col-sm-12 footer-text m-0">
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</p>
 						<div class="col-lg-4 col-sm-12 footer-social">
 							<a href="#"><i class="fa fa-facebook"></i></a>
 							<a href="#"><i class="fa fa-twitter"></i></a>

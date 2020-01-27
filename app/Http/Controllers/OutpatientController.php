@@ -50,7 +50,6 @@ class OutpatientController extends Controller
     */
    public function showOutpatient($id)
    {
-       //return dd($outpatient= outpatients::where('outpatientId', $id)->first());
        $outpatient= Outpatient::where('outpatientId', $id)->first();
 
        return view('auth.outpatient.view', compact('outpatient'));
@@ -149,7 +148,6 @@ class OutpatientController extends Controller
 //utk viewpatient.blade.php
    public function view()
    {
-       //
        return view('auth.clinicstaff.viewpatient')->with('outpatients', Outpatient::all());
    }
 

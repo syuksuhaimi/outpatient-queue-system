@@ -75,15 +75,11 @@ Route::delete('/clinicstaff/deletequeue/{id}', 'QueueController@destroyQueue')->
 
 Route::delete('/clinicstaff/deletepatient/{id}', 'OutpatientController@destroyOutpatient')->name('outpatient.delete');
 
-// Display
-// Route::get('display', ['as' => 'display', 'uses' => 'DisplayController@index']);
-// Route::get('/clinicstaff/display', 'DisplayController@index')->name('display');
-
 //Call
-Route::get('/clinicstaff/call/{id}','CallController@create')->name('call.create')->middleware('auth:clinicstaff');
+Route::get('/clinicstaff/call/{id}','CallController@createCall')->name('call.create')->middleware('auth:clinicstaff');
 
-Route::post('/clinicstaff/call/create/{id}', 'CallController@store')->name('add.call');
+Route::post('/clinicstaff/call/create/{id}', 'CallController@storeCall')->name('add.call');
 
-Route::get('/clinicstaff/display', 'CallController@show')->name('call.display');
+Route::get('/clinicstaff/display', 'CallController@showCall')->name('call.display');
 
-Route::get('/outpatient/display', 'CallController@display')->name('outpatient.call');
+Route::get('/outpatient/display', 'CallController@displayCall')->name('outpatient.call');

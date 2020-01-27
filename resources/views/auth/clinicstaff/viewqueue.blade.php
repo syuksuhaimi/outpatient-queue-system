@@ -29,14 +29,12 @@
                         <td class="centered hidden-phone"> <form method="POST" action="{{ route('queue.delete', $queue->queueId) }}">
                             @csrf
                             @method('DELETE')
-                            <!-- <a class="btn btn-primary btn-xs" href="{{ route('queue.edit', $queue->queueId) }}"><i class="fa fa-pencil"></i></a> -->
                             
                             <a class="btn btn-success btn-xs" href="{{ route('call.create', $queue->queueId) }}"><i class="fa fa-check"></i></a>
                             
                             <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash-o "></i></button>
                             </form>
-                        </td>
-                        
+                        </td> 
                     </tr>
                 </tbody>
                 @endforeach
@@ -51,21 +49,5 @@
   <script type="text/javascript" language="javascript" src="lib/advanced-datatable/js/jquery.js"></script>
   <script type="text/javascript" language="javascript" src="lib/advanced-datatable/js/jquery.dataTables.js"></script>
   <script type="text/javascript" src="lib/advanced-datatable/js/DT_bootstrap.js"></script>
-  <script type="text/javascript">
-  //     $(document).ready(function() {
-  //       var table = $('#datatable').DataTable();
-  //       table.on('click', '.edit', function(){
-  //         $tr = $(this).closest('tr');
-  //         if ($($tr).hasClass('child')){
-  //             $tr = $tr.prev('.parent');
-  //         }
-
-  //         var data = table.row($tr).data();
-  //         console.log(data);
-  //         $('#room').val(data[1]);
-
-  //         $('#editForm').attr('action', '/clinicstaff/queue/'+data[0]);
-  //         $('#editModal').modal('show');
-  //       });
-  // </script>
+  <script type="text/javascript"></script>
 @endsection

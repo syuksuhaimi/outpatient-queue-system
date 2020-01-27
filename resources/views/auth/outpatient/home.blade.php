@@ -18,9 +18,6 @@
                   <h4><b>Opening Hour</b></h4>
                   <hr>
                 </div>
-                <!-- <div class="icn-main-container">
-                  <span class="icn-container">$55</span>
-                </div> -->
                 <ul class="pricing">
                   <li><b>Monday - Friday</b><span>: </span>08:00am to 05:00pm<br/>
                   (Extended Hour: 05:00pm to 09:00pm)</li>

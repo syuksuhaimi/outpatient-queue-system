@@ -50,7 +50,6 @@ class StaffController extends Controller
     */
    public function showClinicStaff($id)
    {
-        //return dd($outpatient= outpatients::where('outpatientId', $id)->first());
         $clinicstaff= ClinicStaff::where('staffId', $id)->first();
 
         return view('auth.clinicstaff.view', compact('clinicstaff'));

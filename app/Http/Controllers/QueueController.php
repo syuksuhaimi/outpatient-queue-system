@@ -39,9 +39,7 @@ class QueueController extends Controller
     {
         $queue=Queue::create([
             'qType' => $request->qType,
-            // 'room' => $request->room,
             'outpatientId' => Auth::guard('outpatient')->user()->outpatientId,
-            // 'staffId' => Auth::guard('staff')->user()->staffId,
         ]);
 
 
@@ -83,7 +81,7 @@ class QueueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateQueue(Request $request, $id)
+    public function update(Request $request, $id)
     {
         // $queue = Queue::where('queueId', $id)->first();
         
